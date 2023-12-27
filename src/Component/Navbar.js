@@ -18,7 +18,7 @@ import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import { Avatar } from '@mui/material';
-
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -59,7 +59,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
+
 export default function PrimarySearchAppBar() {
+  const [countCart, setCountCart] = useState(0)
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -156,10 +158,13 @@ export default function PrimarySearchAppBar() {
       </MenuItem>
     </Menu>
   );
+  const HandleClick = () => {
+    setCountCart(countCart + 1)
+  }
 
   return (
     <>
-      <AppBar position="fixed" style={{background:"rgb(81,97,206)"}}>
+      <AppBar position="fixed" style={{ background: "rgb(81,97,206)" }}>
         <Toolbar>
           <IconButton
             size="large"
@@ -170,15 +175,15 @@ export default function PrimarySearchAppBar() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography 
+          <Typography
             variant="h6"
             noWrap
             component="div"
-            sx={{ display: { xs: 'none', sm: 'block',fontWeight:"" } }}
+            sx={{ display: { xs: 'none', sm: 'block', fontWeight: "" } }}
           >
-            RESTORENT OF KHUSHBOO 
+            flipcard
           </Typography>
-          <Search style={{width:"70%"}}>
+          <Search style={{ width: "70%" }}>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
@@ -190,9 +195,11 @@ export default function PrimarySearchAppBar() {
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
             <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+
               <Badge badgeContent={4} color="error">
-                <MailIcon />
+                <ShoppingCartIcon />
               </Badge>
+
             </IconButton>
             <IconButton
               size="large"
@@ -212,7 +219,7 @@ export default function PrimarySearchAppBar() {
               onClick={handleProfileMenuOpen}
               color="inherit"
             >
-                <Avatar></Avatar>
+              <Avatar></Avatar>
             </IconButton>
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
