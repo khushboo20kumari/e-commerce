@@ -19,7 +19,7 @@ const Item = styled(Paper)(({ theme }) => ({
 function HomePage() {
 
     const [data, setData] = useState([]);
-    const [countCart, setCountCart] = useState(0)
+    // const [countCart, setCountCart] = useState(0)
     const params = useParams()
     const fetchData = () => {
 
@@ -37,9 +37,9 @@ function HomePage() {
         fetchData();
     }, []);
 
-    const HandleClick = () => {
-        setCountCart(countCart + 1)
-    }
+    // const HandleClick = () => {
+    //     setCountCart(countCart + 1)
+    // }
 
     return (
         <>
@@ -50,7 +50,7 @@ function HomePage() {
                             <img style={{ width: "100%", height: "450px" }} src={data.image} />
                             <Box sx={{ width: "100%" }}>
                                 <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-                                    <Button sm={6} lg={6} md={6} xs={12} variant="outlined" fullWidth style={{ width: "40%", margin: "30px", fontSize: "20px", fontWeight: "bold", color: "rgb(159,32,137)" }} onClick={HandleClick} >Add to Card</Button>
+                                    <Button sm={6} lg={6} md={6} xs={12} variant="outlined" fullWidth style={{ width: "40%", margin: "30px", fontSize: "20px", fontWeight: "bold", color: "rgb(159,32,137)" }} >Add to Card</Button>
                                     <Button sm={6} lg={2} md={6} xs={12} variant="contained" fullWidth style={{ width: "40%", margin: "30px", fontSize: "20px", fontWeight: "bold", background: "rgb(159,32,137)" }}>Buy Now</Button>
                                 </Grid>
                             </Box>

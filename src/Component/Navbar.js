@@ -61,7 +61,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 
 
 export default function PrimarySearchAppBar() {
-  const [countCart, setCountCart] = useState(0)
+  // const [countCart, setCountCart] = useState(0)
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -158,10 +158,6 @@ export default function PrimarySearchAppBar() {
       </MenuItem>
     </Menu>
   );
-  const HandleClick = () => {
-    setCountCart(countCart + 1)
-  }
-
   return (
     <>
       <AppBar position="fixed" style={{ background: "rgb(81,97,206)" }}>
